@@ -1,4 +1,4 @@
-package twosum
+package main
 
 // ---------- SOLUTION 1 ---------- //
 // O(n^2)

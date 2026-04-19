@@ -1,10 +1,12 @@
-package palindrome
+package main
 
 import (
 	"strconv"
 )
 
 // ---------- SOLUTION 1 ---------- //
+// Convert int to an array and work through each rune and compare to the other side
+// This would break if x = 0
 func isPalindrome_solution1(x int) bool {
 	runes := []rune(strconv.Itoa(x))
 	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
@@ -32,9 +34,5 @@ func isPalindrome_solution2(x int) bool {
 	}
 
 	// Check reverse matches original
-	if rev == x {
-		return true
-	} else {
-		return false
-	}
+	return rev == x
 }
