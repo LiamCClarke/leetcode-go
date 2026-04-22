@@ -64,29 +64,11 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 			current = head
 		}
 		if list1pointer == nil {
-			for {
-				newNode := &ListNode{}
-				newNode.Val = list2pointer.Val
-				current.Next = newNode           // Sets the next node as the newNode
-				current = newNode                // Moves the current pointer to the newNode
-				list2pointer = list2pointer.Next // Advance the list pointer
-				if list2pointer == nil {
-					break
-				}
-			}
+			current.Next = list2pointer
 			break
 		}
 		if list2pointer == nil {
-			for {
-				newNode := &ListNode{}
-				newNode.Val = list1pointer.Val
-				current.Next = newNode           // Sets the next node as the newNode
-				current = newNode                // Moves the current pointer to the newNode
-				list1pointer = list1pointer.Next // Advance the list pointer
-				if list1pointer == nil {
-					break
-				}
-			}
+			current.Next = list1pointer
 			break
 		}
 		if list1pointer.Val <= list2pointer.Val {
