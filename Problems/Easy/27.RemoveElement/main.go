@@ -25,6 +25,7 @@ func removeElement(nums []int, val int) int {
 			counter++
 			if replaceIndex != -1 {
 				nums[replaceIndex] = num
+				nums[i] = val                    // replace current with val so it will be replaced if needed
 				if nums[replaceIndex+1] == val { // If there are duplicate adjacent vals
 					replaceIndex += 1
 				} else {
